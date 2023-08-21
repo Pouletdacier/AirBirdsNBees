@@ -10,8 +10,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 0) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_21_160022) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "birds", force: :cascade do |t|
+    t.string "name"
+    t.text "details"
+    t.string "species"
+    t.integer "price_per_day"
+    t.bigint "birdlord_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["birdlord_id"], name: "index_birds_on_birdlord_id"
+  end
+
+  create_table "bookings", force: :cascade do |t|
+    t.integer "price_total"
+    t.string "status"
+    t.date "beginning_date"
+    t.date "end_date"
+    t.bigint "renter_id", null: false
+    t.bigint "bird_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bird_id"], name: "index_bookings_on_bird_id"
+    t.index ["renter_id"], name: "index_bookings_on_renter_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "username"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  add_foreign_key "birds", "users", column: "birdlord_id"
+  add_foreign_key "bookings", "birds"
+  add_foreign_key "bookings", "users", column: "renter_id"
 end
