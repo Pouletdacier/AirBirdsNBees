@@ -1,1 +1,89 @@
-// Specific CSS for your home-page
+// Geai des chênes - couleur base
+$white: #F5F2ED;
+$black: #000000;
+$grey: #6B6970;
+$gris_clair: #b4b4b4;
+
+// Geai des chênes - bleu
+$primary: #23355B;
+$blue_fonce: #122B56;
+$primary-blue: #4A75A3;
+$blue_clair: #94B5E3;
+
+// Geai des chênes - marron
+$brown: #8B4513;
+$marron_clair: #C2865C;
+$marron: #B88761;
+$light_brown: #EDC39F;
+
+
+// background wild forest
+$body-bg-image: url('https://c.wallhere.com/photos/e1/dc/landscape_nature_morning_dirt_road_forest_blue_mist_grass-99911.jpg!d');
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: $body-bg-image;
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba($gris_clair, 0.9);  // 90% opacity
+    padding: 2rem;
+    box-shadow: 0 0 15px rgba($black, 0.1);
+    height: 50vh;
+    width: 70vw;
+    border-radius: 15px;  // Rounded corners
+
+    img.bird-illustration {
+        max-width: 50%;
+        height: auto;
+    }
+
+    .content {
+        padding-left: 2rem;
+
+        img.logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;  // Make it round
+            margin-right: 1rem; // Space between logo and title
+        }
+
+        h1 {
+            display: flex;
+            align-items: center; // Vertically center the title with the logo
+            color: $black;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            color: $black;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .btn {
+            padding: 0.7rem 1.5rem;
+            background-color: $primary;
+            color: $white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: darken($primary-blue, 10%);
+            }
+        }
+    }
+}
