@@ -1,0 +1,95 @@
+.bird-show-container {
+  font-family: $body-font;
+  color: $body-color;
+  background-color: $body-bg;
+  border-radius: $border-radius;
+  padding: 0 2rem;
+
+  .bird-title {
+    font-family: $headers-font;
+    margin-bottom: 1rem;
+  }
+
+  .bird-info {
+    display: flex;
+    justify-content: space-between; // pour l'espacement entre la photo et les détails de l'oiseau
+
+    .bird-photo-container {
+      flex: 0 0 50%; // prend la moitié de l'espace disponible
+      padding: 0 1rem; // espacement à gauche et à droite de la photo
+      .bird-photo {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        border-radius: $border-radius;
+        object-fit: cover; // assure que la photo s'adapte à la boîte tout en couvrant entièrement l'espace
+      }
+    }
+
+    .bird-details {
+      flex: 0 0 50%; // prend la moitié de l'espace disponible
+      padding: 1rem;
+      border: 1px solid $gray;
+      border-radius: $border-radius;
+
+      .bird-propose {
+        font-size: 0.9rem;
+        .birdlord-avatar {
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+        }
+      }
+
+      .bird-price {
+        font-weight: bold; // prix en gras
+        margin: 1rem 0;
+      }
+
+      .bird-species {
+        color: $bleue; // espèce en bleu foncé
+        margin: 1rem 0;
+      }
+
+      .bird-description {
+        margin: 1rem 0;
+      }
+
+      .booking-section {
+        background-color: $blue_clair; // fond en marron clair
+        padding: 1rem;
+        border-radius: $border-radius;
+        color: white;
+
+        .booking-dates {
+          display: flex;
+          justify-content: space-between;
+        }
+
+        .booking-price {
+          margin: 1rem 0;
+        }
+
+        button {
+          background-color: $blue_fonce; // bouton en bleu foncé
+          &:hover {
+            background-color: darken($blue_fonce, 10%); // un peu plus foncé au survol
+          }
+        }
+      }
+    }
+  }
+}
+
+.empty-heart::before {
+  content: "♡";
+  font-size: 1.5em;
+  color: $gris_clair;
+}
+
+.full-heart::before {
+  content: "♥";
+  font-size: 1.5em;
+  // color: $e74c3c;
+}
