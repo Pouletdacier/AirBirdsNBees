@@ -1,0 +1,48 @@
+<div class="bird-show-container">
+  <h1 class="bird-title"><%= @bird.name %></h1>
+
+  <div class="bird-info">
+    <div class="bird-photo-container">
+      <%= image_tag @bird.photo, class: "bird-photo" %>
+    </div>
+
+    <div class="bird-details">
+      <p class="bird-propose">
+        Proposé par: <%= @bird.birdlord.username %>
+        <%# <%= image_tag @bird.birdlord.avatar_key, class: "birdlord-avatar" %>
+      </p>
+
+      <button data-controller="heart" data-action="click->heart#toggle">
+        <i data-heart-target="icon" class="empty-heart"></i>
+      </button>
+
+      <div class="bird-price">
+        <%= @bird.price_per_day %> €/jour
+      </div>
+
+      <div class="bird-species">
+        <%= @bird.species %>
+      </div>
+
+      <div class="bird-description">
+        <%= @bird.details %>
+      </div>
+
+      <div class="booking-section">
+        <div class="booking-dates">
+          De: <input type="date" data-booking-target="startDate">
+          À: <input type="date" data-booking-target="endDate">
+        </div>
+
+        <div class="booking-price">
+          Prix total: <span data-booking-target="totalPrice"></span> €
+        </div>
+
+        <button class="btn btn-primary" data-action="booking#calculateTotal">
+          Réserver l'oiseau
+        </button>
+
+      </div>
+    </div>
+  </div>
+</div>
