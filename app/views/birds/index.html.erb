@@ -1,0 +1,24 @@
+<div class= "birds-blurb">
+  <h1>The most <strong>Amazing</strong> Birds</h1>
+  <p>
+    Find your feathery friends for or day or for more if you're wealthy and brave enough
+  </p>
+</div>
+
+<div class="bird-grid">
+  <% @birds.each do |bird| %>
+    <div class="card bird-card">
+      <%= link_to bird_path(bird), style: "text-decoration: none;" do %>          <%= image_tag bird.photo, class: 'bird-photo' %>
+        <div class="card-body">
+          <h4><%= bird.name %></h4>
+          <p>
+            <strong><%= bird.species %></strong><br>
+            <%= bird.details %><br>
+            <%= bird.price_per_day %>
+            € per day
+          </p>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
