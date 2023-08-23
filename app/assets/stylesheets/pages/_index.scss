@@ -1,2 +1,57 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.bird-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 20px;
+  justify-items: center;
+}
+
+.bird-card{
+  width: 300px;
+  height: 450px;
+  border-radius: 5px 5px;
+  border: 1px inset rgba(77, 94, 128,0.30);
+
+  .bird-photo {
+    border-radius: 5px 5px 0px 0px / 5px 5px 0px 0px;
+    width: 300px; /* Adjust the desired width */
+    height: 300px; /* Adjust the desired height */
+    object-fit: cover; /* This maintains the image's aspect ratio and covers the container */
+  }
+  &:hover{
+    box-shadow: 0px 2px 8px 5px rgba(107, 126, 128, 0.15);
+  }
+  h4,p{
+    color:black;
+    text-decoration: none;
+  }
+}
+
+.birds-blurb{
+  background-color: rgba(95, 158, 160, 0.75);
+  margin-top: 40px;
+  margin-bottom: 120px;
+  padding-left: 60px;
+  padding-top: 20px;
+  height: 150px;
+  box-shadow: 0px 2px 8px 5px rgba(107, 126, 128, 0.71);
+  p{
+    padding-left: 70px;
+  }
+}
+
+@media(max-width: 992px) {
+  .bird-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width: 768px) {
+  .bird-grid {
+    grid-template-columns: 1fr;
+  }
+}
