@@ -1,6 +1,10 @@
 // Import Google fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
+
+
+
 @font-face {
   font-family: "Ringbearer";
   src: font-url('RingbearerMedium-51mgZ.ttf') format('truetype')
@@ -9,6 +13,7 @@
 // Define fonts for body and headers
 $body-font: "Work Sans", "Helvetica", "sans-serif";
 $headers-font: "Ringbearer", "Helvetica", "sans-serif";
+$title-font:"Raleway", "Helvetica", "sans-serif";
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
