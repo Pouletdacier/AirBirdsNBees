@@ -15,34 +15,38 @@
 
   .bird-info {
     display: flex;
-    justify-content: space-between; // pour l'espacement entre la photo et les détails de l'oiseau
+    justify-content: space-between;
 
     .bird-photo-container {
-      flex: 0 0 50%; // prend la moitié de l'espace disponible
-      padding: 0 1rem; // espacement à gauche et à droite de la photo
+      flex: 0 0 50%;
+      padding: 0 1rem;
+
       .bird-photo {
         max-width: 100%;
         height: auto;
         display: block;
         margin: 0 auto;
-        border-radius: $border-radius;
-        object-fit: cover; // assure que la photo s'adapte à la boîte tout en couvrant entièrement l'espace
+        object-fit: cover;
+        border-radius: 25px; // value adjusted for more pronounced rounded corners
       }
     }
+
     .birdlord-avatar {
-      width: 50px; /* Ajustez la taille de l'avatar selon vos préférences */
+      width: 50px;
       height: 50px;
-      margin-bottom: 10px; /* Ajustez la marge supérieure si nécessaire */
+      margin-bottom: 10px;
       margin-left: 20px;
     }
+
     .bird-details {
-      flex: 0 0 50%; // prend la moitié de l'espace disponible
+      flex: 0 0 50%;
       padding: 1rem;
       border: 1px solid $gray;
       border-radius: $border-radius;
 
       .bird-propose {
         font-size: 0.9rem;
+
         .birdlord-avatar {
           width: 30px;
           height: 30px;
@@ -51,12 +55,12 @@
       }
 
       .bird-price {
-        font-weight: bold; // prix en gras
+        font-weight: bold;
         margin: 1rem 0;
       }
 
       .bird-species {
-        color: $bleue; // espèce en bleu foncé
+        color: $bleue;
         margin: 1rem 0;
       }
 
@@ -65,9 +69,8 @@
       }
 
       .booking-section {
-        background-color: $blue_clair; // fond en marron clair
+        background-color: $grey;
         padding: 1rem;
-        border-radius: $border-radius;
         color: white;
 
         .booking-dates {
@@ -80,10 +83,18 @@
         }
 
         button {
-          background-color: $blue_fonce; // bouton en bleu foncé
+          padding: 10px 20px;
+          font-size: 1em;
+          border: none;
+          border-radius: 8px;
+          background-color: $blue_fonce;
+          color: $white;
+          transition: all 0.3s;
+          font-family: $body-font;
+
           &:hover {
-            background-color: darken($blue_fonce, 10%); // un peu plus foncé au survol
-            box-shadow: 0px 0px 10px 5px rgba(107, 126, 128, 0.15);
+            background-color: darken($blue_fonce, 10%);
+            box-shadow: 0px 0px 10px 5px rgba(18, 43, 86, 0.15);
           }
         }
       }
@@ -92,13 +103,33 @@
 }
 
 .empty-heart::before {
-  content: "♡";
+  font-family: "Font Awesome 5 Free";
+  content: "\f004";
+  font-weight: 400;
   font-size: 1.5em;
   color: $gris_clair;
 }
 
 .full-heart::after {
-  content: "♥";
+  font-family: "Font Awesome 5 Free";
+  content: "\f004";
+  font-weight: 900;
   font-size: 1.5em;
   color: $red;
+}
+
+input[type="date"] {
+  padding: 10px 15px;
+  font-size: 1em;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(50, 50, 93, 0.11), 0px 1px 3px rgba(0, 0, 0, 0.08);
+  background-color: $white;
+  color: $black;
+  appearance: none;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0px 4px 6px rgba(50, 50, 93, 0.25), 0px 1px 3px rgba(0, 0, 0, 0.2);
+  }
 }
