@@ -1,0 +1,31 @@
+  <section class="h-100">
+    <div class="container h-100">
+      <div class="row justify-content-sm-center h-100">
+        <div class="col-xxl-4 col-xl-5 col-lg-5 col-md-7 col-sm-9">
+
+          <div class="text-center my-5">
+            <img src="https://i.ibb.co/pyj3QBQ/blip.png" alt="logo" width="200">
+          </div>
+
+          <div class="card shadow-lg">
+            <div class="card-body p-5">
+              <h1 class="fs-4 card-title fw-bold mb-4">Add a bird</h1>
+
+              <%= simple_form_for(@bird) do |f| %>
+                <div class="form-inputs col-12 mb-3">
+                    <%= f.input :name %>
+                    <%= f.input :species %>
+                    <%= f.input :details %>
+                    <%= f.input :price_per_day %>
+                    <%= f.input :photo, as: :file %>
+                </div>
+                <div class="form-actions mb-4">
+                    <%= f.button :submit, "New Bird", class: "btn btn-primary btn-lg w-100" %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

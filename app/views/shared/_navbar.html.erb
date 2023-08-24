@@ -20,7 +20,7 @@
         </li>
 
         <li class="nav-item flex-center">
-          <%= link_to new_birdlord_bird_path, class: "nav-link flex-center" do %>
+          <%= link_to new_bird_path, class: "nav-link flex-center" do %>
             <i class="fas fa-plus"></i>
             <p>Add bird</p>
           <% end %>
@@ -34,7 +34,7 @@
             </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Bookings", renter_dashboards_path, class: "dropdown-item" %>
-              <%= link_to "Add bird", new_birdlord_bird_path, class: "dropdown-item" %>
+              <%= link_to "Add bird", new_bird_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
           </li>

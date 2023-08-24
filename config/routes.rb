@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
 
-  resources :birds, only: [:index, :show] do
+  resources :birds, only: [:index, :show, :new, :create] do
     resources :bookings, only: [:create]
   end
 
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   namespace :birdlord do
     resource :dashboards, only: [:show]
 
-    resources :birds, only: [:new, :create]
+    # resources :birds, only: [:new, :create]
 
     resources :bookings, only: [] do
       member do
