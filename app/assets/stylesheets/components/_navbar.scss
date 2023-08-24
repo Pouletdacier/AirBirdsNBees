@@ -1,12 +1,59 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+  height: 110px;  // Hauteur de la navbar
+
+  .flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .navbar-brand {
+    margin-left: 30px;
+  }
+
+  .navbar-title {
+    font-family: $headers-font;
+    margin-top: 10px;
+    font-size: 16px;
+  }
+
+  .logo-img {
+    width: 45px;     // Taille du logo
+    height: 45px;    // Hauteur du logo
+    margin-top: 20px; // POSITION LOGO GAUCHE
+  }
+
+  .avatar-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-bottom: 3px; // Décaler image profile vers le haut ou vers le bas.
+  }
+
+  .nav-item {
+    margin: 0 15px;
+
+    i {
+      font-size: 24px;
+      margin-bottom: 10px;   // Titres add bird et aviary
+    }
+
+    p {
+      margin: 0;
+      position: relative;
+      bottom: -5px; // Décaler le titre "Profile".
+    }
+  }
+
+  .profile-dropdown {
+    margin-right: 50px; // Décaler davantage vers la gauche.
+  }
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
 }
