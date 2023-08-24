@@ -47,10 +47,12 @@
         <div class="booking-price">
           Total price: <span data-birds-show-target="totalPrice"></span> €
         </div>
+        <%= link_to bird_bookings_path do %>
+          <button class="btn btn-primary">
+            Book this bird
+          </button>
+        <% end %>
 
-        <button class="btn btn-primary" data-action="birds-show#calculateTotal">
-          Rent <%= @bird.name %>
-        </button>
       </div>
     </div>
   </div>
