@@ -16,6 +16,8 @@
   .bird-info {
     display: flex;
     justify-content: space-between;
+    gap: 3rem; // Espacement ajouté entre photo et détails
+    padding-right: 100px;
 
     .bird-photo-container {
       flex: 0 0 50%;
@@ -27,7 +29,7 @@
         display: block;
         margin: 0 auto;
         object-fit: cover;
-        border-radius: 25px; // value adjusted for more pronounced rounded corners
+        border-radius: 25px;
       }
     }
 
@@ -40,9 +42,26 @@
 
     .bird-details {
       flex: 0 0 50%;
-      padding: 1rem;
-      border: 1px solid $gray;
-      border-radius: $border-radius;
+      padding: 2rem; // Augmentation du padding
+      // background: rgba(255, 255, 255, 0.6) url('https://c1.wallpaperflare.com/preview/370/405/316/mist-misty-forest-woods.jpg') no-repeat center center;
+
+      background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('https://c1.wallpaperflare.com/preview/370/405/316/mist-misty-forest-woods.jpg');
+
+      // background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('https://us.123rf.com/450wm/olgaivolga/olgaivolga1512/olgaivolga151200189/50109831-dégradé-bleu-clair-et-blanc-sur-le-fond-blanc.jpg?ver=6');
+
+      background-size: cover;
+      border-radius: 25px; // Coins arrondis pour correspondre à la photo
+
+      position: relative;
+
+      button[data-controller="heart"] {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: none; // Supprime le fond par défaut
+        border: none; // Supprime la bordure
+        font-size: 2em; // Définissez la taille du cœur
+      }
 
       .bird-propose {
         font-size: 0.9rem;
@@ -70,7 +89,7 @@
 
       .booking-section {
         background-color: $grey;
-        padding: 1rem;
+        padding: 2rem 1rem 3rem;
         color: white;
 
         .booking-dates {
@@ -80,11 +99,12 @@
 
         .booking-price {
           margin: 1rem 0;
+          margin-bottom: 2rem;
         }
 
         button {
-          padding: 10px 20px;
-          font-size: 1em;
+          padding: 15px 30px;
+          font-size: 1.2em;
           border: none;
           border-radius: 8px;
           background-color: $blue_fonce;
@@ -105,18 +125,17 @@
 .empty-heart::before {
   font-family: "Font Awesome 5 Free";
   content: "\f004";
-  font-weight: 400;
-  font-size: 1.5em;
+  font-weight: 400; // Cœur vide
   color: $gris_clair;
 }
 
 .full-heart::after {
   font-family: "Font Awesome 5 Free";
   content: "\f004";
-  font-weight: 900;
-  font-size: 1.5em;
+  font-weight: 900; // Cœur plein
   color: $red;
 }
+
 
 input[type="date"] {
   padding: 10px 15px;

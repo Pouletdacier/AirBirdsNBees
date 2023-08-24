@@ -1,4 +1,4 @@
-<div data-controller="birds-show" data-birds-show-price-per-day="<%= @bird.price_per_day %>" class="bird-show-container">
+<div data-controller="birds-show" data-birds-show-price-per-day="<%= @bird.price_per_day %>" class="bird-show-container" style="font-size: 1.2em;">
   <h1 class="bird-title"><strong><%= @bird.name %></strong></h1>
 
   <div class="bird-info">
@@ -7,33 +7,39 @@
     </div>
 
     <div class="bird-details">
-      <p class="bird-propose">
+      <p class="bird-propose" style="font-size: 1.5em;">
         Proposed by: <strong><%= @bird.birdlord.username %></strong>
-        <%= image_tag @bird.birdlord.avatar_url, class: "birdlord-avatar" %>
+        <%= image_tag @bird.birdlord.avatar_url, class: "birdlord-avatar", style: "width: 60px; height: 60px;" %>
       </p>
 
       <button data-controller="heart" data-action="click->heart#toggle">
         <i data-heart-target="icon" class="empty-heart"></i>
       </button>
 
-      <div class="bird-price">
+      <div class="bird-price" style="font-size: 1.5em;">
         <%= @bird.price_per_day %> €/day
       </div>
 
-      <div class="bird-species">
-       Species: <%= @bird.species %>
+      <div class="bird-species" style="font-size: 1.5em; color: darkblue;">
+        <i class="fas fa-feather"></i> <%= @bird.species %>
       </div>
 
-      <div class="bird-description">
-       Diet: to complete...
+      <div class="bird-description" style="font-size: 1.5em; margin-top: 10px;">
+        <%= @bird.details %>
       </div>
 
-      <div class="bird-description">
-       Height and weight: to complete...
-      </div>
+      <div style="margin-top: 20px;">
+        <div class="bird-description">
+          <i class="fa-solid fa-plate-wheat"></i> <%= @bird.diet %>
+        </div>
 
-      <div class="bird-description">
-       Description: <%= @bird.details %>
+        <div class="bird-description">
+          <i class="fas fa-weight"></i> <%= @bird.height_and_weight %>
+        </div>
+
+        <div class="bird-description"  style="font-size: 1em;>
+          Favorite snack: <%= @bird.favorite_snack %>
+        </div>
       </div>
 
       <div class="booking-section">
