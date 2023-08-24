@@ -2,10 +2,11 @@
 @import "home";
 
 .bird-grid {
+
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(4, 1fr);
-  grid-column-gap: 10px;
+  grid-column-gap: 5px;
   grid-row-gap: 20px;
   justify-items: center;
 }
@@ -13,6 +14,7 @@
 .bird-card{
   width: 300px;
   height: 450px;
+  margin-bottom: 50px;
   border-radius: 5px 5px;
   border: 1px inset rgba(77, 94, 128,0.30);
 
@@ -23,7 +25,8 @@
     object-fit: cover; /* This maintains the image's aspect ratio and covers the container */
   }
   &:hover{
-    box-shadow: 0px 2px 8px 5px rgba(107, 126, 128, 0.15);
+    box-shadow: 0px 0px 10px 5px rgba(107, 126, 128, 0.15);
+    transform: translateY(-5px); /* Soulève légèrement la carte */
   }
   h4,p{
     color:black;
@@ -32,8 +35,9 @@
 }
 
 .birds-blurb{
+
   background-color: rgba(95, 158, 160, 0.75);
-  margin-top: 40px;
+  margin-top: 0px;
   margin-bottom: 120px;
   padding-left: 60px;
   padding-top: 20px;
