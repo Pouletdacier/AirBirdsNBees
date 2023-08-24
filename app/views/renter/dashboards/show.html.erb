@@ -1,0 +1,25 @@
+<div class="renter-dashboard-blurb">
+  <h4>My bookings</h4>
+</div>
+
+<div class="renter-dashboard">
+  <% @bookings.each do |booking| %>
+  <div class="card-product">
+    <% bird= Bird.find(booking.bird_id) %>
+    <%= image_tag bird.photo, class: "bird-photo" %>
+    <div class="card-product-infos">
+      <h2>
+        <%= bird.name %>
+      </h2>
+      <p>
+        Owned by
+        <%= User.find(bird.birdlord_id).username %><br>
+        Booking status:
+        <%= booking.status %><br>
+        <%= booking.beginning_date %><br>
+        <%= booking.end_date %><br>
+      </p>
+    </div>
+  </div>
+  <% end %>
+</div>
