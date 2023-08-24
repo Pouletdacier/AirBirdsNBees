@@ -34,42 +34,42 @@ jacques = User.create!(
   email:    "jacques.couche@gmail.com",
   password: "123456",
   username: "Jaques Couche",
-  avatar_url:"avatar_3"
+  avatar_url:avatar_image["avatar_3"]
 )
 
 thea = User.create!(
   email:    "théa.louest@gmail.com",
   password: "123456",
   username: "Théa Louest",
-  avatar_url:"avatar_4"
+  avatar_url:avatar_image["avatar_4"]
 )
 
 laurie = User.create!(
   email:    "laurie.fice@gmail.com",
   password: "123456",
   username: "Laurie Fice",
-  avatar_url:"avatar_5"
+  avatar_url:avatar_image["avatar_5"]
 )
 
 marie = User.create!(
   email:    "marie.rouana@gmail.com",
   password: "123456",
   username: "Marie Rouana",
-  avatar_url:"avatar_6"
+  avatar_url:avatar_image["avatar_6"]
 )
 
 oussama = User.create!(
   email:    "oussama.palairtréclaire@gmail.com",
   password: "123456",
   username: "Oussama Palairtréclaire",
-  avatar_url:"avatar_7"
+  avatar_url:avatar_image["avatar_7"]
 )
 
 thierry = User.create!(
   email:    "thierry.golo@gmail.com",
   password: "123456",
   username: "Thierry Golo",
-  avatar_url: "avatar_8"
+  avatar_url: avatar_image["avatar_8"]
 )
 
 puts "Adding Birds..."
