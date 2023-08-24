@@ -1,4 +1,4 @@
-<div class="bird-show-container">
+<div data-controller="birds-show" data-birds-show-price-per-day="<%= @bird.price_per_day %>" class="bird-show-container">
   <h1 class="bird-title"><strong><%= @bird.name %></strong></h1>
 
   <div class="bird-info">
@@ -8,9 +8,7 @@
 
     <div class="bird-details">
       <p class="bird-propose">
-        Proposed by : <strong><%= @bird.birdlord.username %></strong>
-
-
+        Proposed by: <strong><%= @bird.birdlord.username %></strong>
         <%= image_tag @bird.birdlord.avatar_url, class: "birdlord-avatar" %>
       </p>
 
@@ -27,57 +25,32 @@
       </div>
 
       <div class="bird-description">
-       Diet: to complete........
+       Diet: to complete...
       </div>
 
-    <div class="bird-description">
-       Height and weight: to complete........
+      <div class="bird-description">
+       Height and weight: to complete...
       </div>
 
       <div class="bird-description">
        Description: <%= @bird.details %>
       </div>
 
-
       <div class="booking-section">
         <div class="booking-dates">
-          From: <input type="date" data-booking-target="startDate">
-          To: <input type="date" data-booking-target="endDate">
+          From: <input type="date" data-birds-show-target="startDate">
+          To: <input type="date" data-birds-show-target="endDate">
         </div>
+
+        <div data-birds-show-target="errorMessage" style="display: none;">Please provide valid dates.</div>
 
         <div class="booking-price">
-          Total price: <span data-booking-target="totalPrice"></span> €
+          Total price: <span data-birds-show-target="totalPrice"></span> €
         </div>
 
-        <button class="btn btn-primary" data-action="booking#calculateTotal">
+        <button class="btn btn-primary" data-action="birds-show#calculateTotal">
           Rent <%= @bird.name %>
         </button>
-
-        <script>
-          document.addEventListener("DOMContentLoaded", () => {
-            const startDateInput = document.querySelector("[data-booking-target='startDate']");
-            const endDateInput = document.querySelector("[data-booking-target='endDate']");
-            const totalPriceSpan = document.querySelector("[data-booking-target='totalPrice']");
-
-            function calculateTotal() {
-              const pricePerDay = <%= @bird.price_per_day %>;
-              const startDate = new Date(startDateInput.value);
-              const endDate = new Date(endDateInput.value);
-
-              if (startDate && endDate && startDate <= endDate) {
-                const days = (endDate - startDate) / (1000 * 60 * 60 * 24) + 1 ;
-                const total = pricePerDay * days;
-                totalPriceSpan.textContent = total.toFixed(2);
-              } else {
-                totalPriceSpan.textContent = "0.00";
-                errorMessage.style.display = "block";
-              }
-            }
-
-            startDateInput.addEventListener("change", calculateTotal);
-            endDateInput.addEventListener("change", calculateTotal);
-          });
-        </script>
       </div>
     </div>
   </div>
