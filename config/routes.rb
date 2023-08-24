@@ -8,11 +8,11 @@ Rails.application.routes.draw do
   end
 
   namespace :renter do
-    resource :dashboard, only: [:show]
+    resource :dashboards, only: [:show]
   end
 
   namespace :birdlord do
-    resource :dashboard, only: [:show]
+    resource :dashboards, only: [:show]
 
     resources :birds, only: [:new, :create]
 
