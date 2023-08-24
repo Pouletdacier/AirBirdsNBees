@@ -4,10 +4,13 @@
   background-color: $body-bg;
   border-radius: $border-radius;
   padding: 0 2rem;
+  margin-top: 40px;
+  margin-bottom: 40px;
 
   .bird-title {
     font-family: $headers-font;
     margin-bottom: 1rem;
+    text-align: center;
   }
 
   .bird-info {
@@ -26,7 +29,12 @@
         object-fit: cover; // assure que la photo s'adapte à la boîte tout en couvrant entièrement l'espace
       }
     }
-
+    .birdlord-avatar {
+      width: 50px; /* Ajustez la taille de l'avatar selon vos préférences */
+      height: 50px;
+      margin-bottom: 10px; /* Ajustez la marge supérieure si nécessaire */
+      margin-left: 20px;
+    }
     .bird-details {
       flex: 0 0 50%; // prend la moitié de l'espace disponible
       padding: 1rem;
@@ -75,6 +83,7 @@
           background-color: $blue_fonce; // bouton en bleu foncé
           &:hover {
             background-color: darken($blue_fonce, 10%); // un peu plus foncé au survol
+            box-shadow: 0px 0px 10px 5px rgba(107, 126, 128, 0.15);
           }
         }
       }
@@ -88,8 +97,8 @@
   color: $gris_clair;
 }
 
-.full-heart::before {
+.full-heart::after {
   content: "♥";
   font-size: 1.5em;
-  // color: $e74c3c;
+  color: $red;
 }
