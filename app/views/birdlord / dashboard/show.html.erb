@@ -1,0 +1,29 @@
+<div class="birdlord-dashboard-blurb">
+  <h4>My bookings</h4>
+</div>
+
+<div class="birdlord-dashboard">
+  <% @bookings.each do |booking| %>
+  <div class="card-product">
+    <% bird= Bird.find(booking.bird_id) %>
+    <%= image_tag bird.photo, class: "bird-photo" %>
+    <div class="card-product-infos">
+      <h2>
+        <%= bird.name %>
+      </h2>
+      <p>
+        Owned by
+        <%= User.find(bird.birdlord_id).username %><br>
+        Booking status:
+        <%= booking.status %><br>
+        <%= booking.beginning_date %><br>
+        <%= booking.end_date %><br>
+      </p>
+       <div class="booking-actions">
+          <%= link_to "Accept", birdlord_booking_accept_path(booking), method: :patch, class: "btn btn-success" %>
+          <%= link_to "Decline", birdlord_booking_decline_path(booking), method: :patch, class: "btn btn-danger" %>
+        </div>
+    </div>
+  </div>
+  <% end %>
+</div>

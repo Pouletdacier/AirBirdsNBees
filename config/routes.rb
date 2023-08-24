@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
     resources :birds, only: [:new, :create]
 
-    resources :bookings, only: [] do
+    resources :bookings, only: [:show, :create] do
       member do
         patch :accept
         patch :decline

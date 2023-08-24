@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :birds, foreign_key: :birdlord_id
   has_many :bookings, foreign_key: :renter_id
+  has_many :bookings_as_birdlord, through: :birds, source: :bookings, class_name: "Booking"
 
   AVATAR = {
     "avatar_1" => "https://helium-editions.fr/je-suis-un-oiseau-de-la-ville/images/CORNEILLE-NOIRE.png",
