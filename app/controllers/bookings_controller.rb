@@ -3,12 +3,12 @@ class BookingsController < ApplicationController
     @bird = Bird.find(params[:bird_id])
     @booking = Booking.new(booking_params)
     @booking.renter_id = current_user.id
-    @booking.bird_id = @bird
+    @booking.bird_id = @bird.id
     @booking.status = "pending"
-    if @booking.save
+    if @booking.save!
       redirect_to renter_dashboards_path
     else
-      render :new, status: :unprocessable_entity
+      render bird_path(@bird), status: :unprocessable_entity
     end
   end
 
