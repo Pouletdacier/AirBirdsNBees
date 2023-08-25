@@ -6,19 +6,19 @@
       <%= image_tag @bird.photo, class: "bird-photo" %>
     </div>
 
-    <div class="bird-details">
-      <p class="bird-propose" style="font-size: 1.5em;">
-        Proposed by: <strong><%= @bird.birdlord.username %></strong>
-        <%= image_tag @bird.birdlord.avatar_url, class: "birdlord-avatar", style: "width: 60px; height: 60px;" %>
-      </p>
+  <div class="bird-details">
+    <p class="bird-propose" style="font-size: 1.5em;">
+      Proposed by: <strong><%= @bird.birdlord.username %></strong>
+      <%= image_tag @bird.birdlord.avatar_url, class: "birdlord-avatar", style: "width: 60px; height: 60px;" %>
+    </p>
 
       <%# <button data-controller="heart" data-action="click->heart#toggle">
         <i data-heart-target="icon" class="empty-heart"></i>
       </button> %>
 
-      <div class="bird-price" style="font-size: 1.5em;">
-        <%= @bird.price_per_day %> €/day
-      </div>
+    <div class="bird-price" style="font-size: 1.5em;">
+      <%= @bird.price_per_day %> €/day
+    </div>
 
       <div class="bird-species" style="font-size: 1.5em; color: darkblue;">
         <i class="fas fa-feather"></i> <%= @bird.species %>
@@ -42,42 +42,23 @@
         </div>
       </div>
 
-      <div class="booking-section">
-        <div class="booking-dates">
-          From: <input type="date" data-birds-show-target="startDate">
-          To: <input type="date" data-birds-show-target="endDate">
-        </div>
 
-        <div data-birds-show-target="errorMessage" style="display: none;">Please provide valid dates.</div>
-
-        <div class="booking-price">
-          Total price: <span data-birds-show-target="totalPrice"></span> €
-        </div>
-
-        <button class="btn btn-primary" data-action="birds-show#calculateTotal">
-          Rent <%= @bird.name %>
-        </button>
-      </div>
-      <%= simple_form_for([@bird, Booking.new]) do |f| %>
-      <div class="form-inputs col-12 mb-3">
-          <%= f.input :beginning_date,
-                      as: :string,
-                      input_html: { data: { controller: "datepicker" }, birds_show_target:"startDate"} %>
-          <%= f.input :end_date,
-                      as: :string,
-                      input_html: { data: { controller: "datepicker" }, birds_show_target: "endDate" } %>
-      </div>
-      <div class="form-actions mb-4">
-          <%= f.button :submit, "New Booking", class: "btn btn-primary btn-lg w-100" %>
-      </div>
-      <% end %>
-        <div class="booking-price">
-         <button class="btn btn-primary" data-action="birds-show#calculateTotal">
-          Calculate Total Price</button>
-          Total price: <span data-birds-show-target="totalPrice"></span> €
-        </div>
+ <%= simple_form_for([@bird, Booking.new]) do |f| %>
+    <div class="form-inputs col-12 mb-3">
+        <%= f.input :beginning_date,
+                    as: :string,
+                    input_html: { data: { controller: "datepicker", datepicker_target: "startDate", birds_show_target: "startDate" } } %>
+        <%= f.input :end_date,
+                    as: :string,
+                    input_html: { data: { controller: "datepicker", datepicker_target: "endDate", birds_show_target: "endDate" } } %>
     </div>
+   <div class="form-actions mb-4">
+        <%= f.button :submit, "New Booking", class: "btn btn-primary btn-lg w-100" %>
+    </div>
+  <% end %>
+
+  <div class="booking-price" style="font-size: 1.5em;">
+    Total price: <strong> <span data-birds-show-target="totalPrice">0.00</span> € </strong>
+    <div data-birds-show-target="errorMessage" style="display: none;">⚠️ Please provide valid dates ⚠️</div>
   </div>
-
-
 </div>
