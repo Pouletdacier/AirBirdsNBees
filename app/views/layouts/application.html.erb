@@ -17,7 +17,7 @@
   </head>
 
   <body>
-    <%= render "shared/navbar" %>
+    <%= render "shared/navbar" unless params[:controller]=="pages"%>
     <%= render "shared/flashes" %>
     <%= yield %>
   </body>

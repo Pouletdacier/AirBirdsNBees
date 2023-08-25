@@ -12,6 +12,8 @@ eagerLoadControllersFrom("controllers", application)
 
 
 // COEUR DE LA WISHLIST
+
+
 document.addEventListener('DOMContentLoaded', function() {
   const likeIcons = document.querySelectorAll('.like-icon');
 
