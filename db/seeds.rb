@@ -104,7 +104,7 @@ helmut.photo.attach(io: file, filename: "photo.jpg", content_type: "image/jpeg")
 ronnie = Bird.create!(
   birdlord: laurie,
   name: 'Ronnie',
-  details: 'A sweetheart at heart. Eats babies.',
+  details: 'A real sweetheart. Eats babies.',
   species: 'Eurasian Wren',
   price_per_day: 120,
   diet: 'Insects, spiders, small creatures',
@@ -118,7 +118,7 @@ ronnie.photo.attach(io: file, filename: "photo.jpg", content_type: "image/jpeg")
 tadeusz = Bird.create!(
   birdlord: oussama,
   name: 'Tadeusz',
-  details: 'Fabulous.',
+  details: 'Fabulous. Slay king. Work.',
   species: 'European Goldfinch',
   price_per_day: 600,
   diet: 'Seeds, insects',
@@ -160,7 +160,7 @@ mephisto.photo.attach(io: file, filename: "photo.jpg", content_type: "image/jpeg
 ivan = Bird.create!(
   birdlord: laurie,
   name: 'Ivan',
-  details: 'Ivan is the best. If you hurt him we will find you and we will hurt you.',
+  details: 'Ivan is the best. If you harm him in any way we will find you and we will hurt you.',
   species: 'Kookaburra',
   price_per_day: 200,
   diet: 'Carnivore',
