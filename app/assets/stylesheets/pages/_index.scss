@@ -1,61 +1,106 @@
 // Import page-specific CSS files here.
 @import "home";
 
+body {
+    padding-left: 50px; // Ajout d'espace à gauche de la bordure de la page
+    padding-right: 50px; // Ajout d'espace à droite de la bordure de la page
+}
+
 .bird-grid {
-
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  grid-column-gap: 5px;
-  grid-row-gap: 20px;
-  justify-items: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 3px;
+    grid-row-gap: 10px;
+    justify-items: center;
 }
 
-.bird-card{
-  width: 300px;
-  height: 450px;
-  margin-bottom: 50px;
-  border-radius: 5px 5px;
-  border: 1px inset rgba(77, 94, 128,0.30);
+.bird-card {
+    width: 300px;
+    height: 450px;
+    margin-bottom: 50px;
+    border-radius: 15px; // Modification pour arrondir tous les coins
+    border: none;
 
-  .bird-photo {
-    border-radius: 5px 5px 0px 0px / 5px 5px 0px 0px;
-    width: 300px; /* Adjust the desired width */
-    height: 300px; /* Adjust the desired height */
-    object-fit: cover; /* This maintains the image's aspect ratio and covers the container */
-  }
-  &:hover{
-    box-shadow: 0px 0px 10px 5px rgba(107, 126, 128, 0.15);
-    transform: translateY(-5px); /* Soulève légèrement la carte */
-  }
-  h4,p{
-    color:black;
-    text-decoration: none;
-  }
+    .bird-photo {
+        border-radius: 15px; // Modification pour arrondir tous les coins
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+    }
+
+    &:hover {
+        box-shadow: 0px 0px 10px 5px rgba(107, 126, 128, 0.15);
+        transform: translateY(-5px);
+    }
+
+    h4, p {
+        color: black;
+        text-decoration: none;
+    }
+
+    p {
+      margin: 0px 0;
+
+      strong {
+        display: block;
+        margin-bottom: 0px;
+        }
+    }
 }
 
-.birds-blurb{
+.birds-blurb {
+    font-family: 'Raleway', sans-serif; // Modification de la police pour Raleway
+    background-color: rgba(95, 158, 160, 0.75);
+    margin-top: 0px;
+    margin-bottom: 60px;
+    padding-left: 60px;
+    padding-top: 20px;
+    height: 150px;
+    box-shadow: 0px 2px 8px 5px rgba(107, 126, 128, 0.71);
 
-  background-color: rgba(95, 158, 160, 0.75);
-  margin-top: 0px;
-  margin-bottom: 120px;
-  padding-left: 60px;
-  padding-top: 20px;
-  height: 150px;
-  box-shadow: 0px 2px 8px 5px rgba(107, 126, 128, 0.71);
-  p{
-    padding-left: 70px;
-  }
+    p {
+        padding-left: 70px;
+    }
 }
 
 @media(max-width: 992px) {
-  .bird-grid {
-    grid-template-columns: 1fr 1fr;
-  }
+    .bird-grid {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 @media(max-width: 768px) {
-  .bird-grid {
-    grid-template-columns: 1fr;
+    .bird-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.like-icon {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: color 0.3s;
+  color: black;
+
+  &:hover, // Quand le curseur survole l'icône
+  &.fas {  // Quand l'icône est en mode "active" (icône pleine pour indiquer que l'oiseau est dans la wishlist)
+    color: black;
   }
 }
+
+// .like-icon {
+//   position: absolute;
+//   bottom: 10px;
+//   right: 10px;
+//   font-size: 24px;
+//   cursor: pointer;
+//   transition: color 0.3s;
+//   color: black;
+
+//   &:hover {
+//       color: black;
+//   }
+// }
