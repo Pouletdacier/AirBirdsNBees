@@ -1,4 +1,5 @@
 puts "Cleaning database..."
+Wish.destroy_all
 Booking.destroy_all
 Bird.destroy_all
 User.destroy_all
