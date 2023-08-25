@@ -1,34 +1,25 @@
 <div class="renter-dashboard-blurb">
   <h4>My bookings</h4>
-  <p>The lovely birds you will soon get to meet</p>
 </div>
-<div class="renter-container">
-  <div class="container">
-    <div class="renter-dashboard">
-      <% if @bookings.empty? %>
-        <p>Sorry, you haven't booked any birdies yet.</p>
-      <% else %>
-        <% @bookings.each do |booking| %>
-        <div class="card-product">
-          <% bird = Bird.find(booking.bird_id) %>
-          <%= image_tag bird.photo, class: "bird-photo" %>
-          <div class="card-product-infos">
-            <h2>
-              <%= bird.name %>
-            </h2>
-            <p>
-              Owned by
-              <%= User.find(bird.birdlord_id).username %><br>
-              Total price:
-              <%= booking.price_total %> € <br>
-              Booking status:
-              <%= booking.status %><br>
-              From <%= booking.beginning_date %> to <%= booking.end_date %>
-            </p>
-          </div>
-        </div>
-        <% end %>
-      <% end %>
+
+<div class="renter-dashboard">
+  <% @bookings.each do |booking| %>
+  <div class="card-product">
+    <% bird= Bird.find(booking.bird_id) %>
+    <%= image_tag bird.photo, class: "bird-photo" %>
+    <div class="card-product-infos">
+      <h2>
+        <%= bird.name %>
+      </h2>
+      <p>
+        Owned by
+        <%= User.find(bird.birdlord_id).username %><br>
+        Booking status:
+        <%= booking.status %><br>
+        <%= booking.beginning_date %><br>
+        <%= booking.end_date %><br>
+      </p>
     </div>
   </div>
+  <% end %>
 </div>
