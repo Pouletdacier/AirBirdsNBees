@@ -5,7 +5,12 @@ Rails.application.routes.draw do
 
   resources :birds, only: [:index, :show, :new, :create] do
     resources :bookings, only: [:create]
+    # POUR LA WISHLIST
+    resource :wishes, only: [:create, :destroy]
   end
+
+  # Route pour voir la wishlist de l'utilisateur
+  get 'wishlist', to: 'users#wishlist', as: :user_wishlist
 
   namespace :renter do
     resource :dashboards, only: [:show]

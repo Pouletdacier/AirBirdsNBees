@@ -7,6 +7,11 @@ class User < ApplicationRecord
   has_many :birds, foreign_key: :birdlord_id
   has_many :bookings, foreign_key: :renter_id
 
+  # POUR LA WISHLIST !!!
+  has_many :wishes
+  has_many :wishlisted_birds, through: :wishes, source: :bird
+
+
   AVATAR = {
     "avatar_1" => "https://helium-editions.fr/je-suis-un-oiseau-de-la-ville/images/CORNEILLE-NOIRE.png",
     "avatar_2" => "https://helium-editions.fr/je-suis-un-oiseau-de-la-ville/images/FAUCON-CRECERELLE.png",

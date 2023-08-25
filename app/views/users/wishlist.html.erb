@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>Your Wishlist</h1>
+
+  <div class="bird-grid">
+    <% @wishlisted_birds.each do |bird| %>
+      <div class="card bird-card">
+        <%= link_to bird_path(bird), style: "text-decoration: none;" do %>
+          <%= image_tag bird.photo, class: 'bird-photo' %>
+          <div class="card-body">
+            <h4><%= bird.name %></h4>
+            <p>
+              <strong><%= bird.species %></strong>
+              <%= bird.price_per_day %>€ per day
+            </p>
+          </div>
+          <i class="fas fa-heart like-icon" data-bird-id="<%= bird.id %>"></i>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
