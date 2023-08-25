@@ -10,3 +10,13 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+$body-bg-image: url('https://cdn.shopify.com/s/files/1/0565/7080/6458/files/mist-forest-wallpaper-mural.jpg?v=1628578573');
+
+body{
+  background-image: $body-bg-image;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+}
