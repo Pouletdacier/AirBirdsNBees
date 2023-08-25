@@ -52,6 +52,13 @@
   .profile-dropdown {
     margin-right: 50px; // Décaler davantage vers la gauche.
   }
+  .container-extend {
+    width: 100%;
+    padding-left: 0px;
+    padding-right: 0px;
+    max-width: 100%;
+  }
+
 }
 
 .navbar-lewagon .navbar-collapse {
