@@ -8,7 +8,7 @@
 <div class="bird-grid">
   <% @birds.each do |bird| %>
     <div class="card bird-card">
-      <!-- D'abord, l'icône de cœur en dehors du lien -->
+      <!-- D'abord, l'icône de cœur en dehors du lien , data wish added!!!!!!!!!-->
       <i class="far fa-heart like-icon" data-bird-id="<%= bird.id %>"></i>
 
       <%= link_to bird_path(bird), style: "text-decoration: none;" do %>
