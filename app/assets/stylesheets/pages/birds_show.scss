@@ -11,12 +11,13 @@
     font-family: $headers-font;
     margin-bottom: 1rem;
     text-align: center;
+    font-weight: normal;
   }
 
   .bird-info {
     display: flex;
     justify-content: space-between;
-    gap: 3rem; // Espacement ajouté entre photo et détails
+    gap: 3rem;
     padding-right: 100px;
 
     .bird-photo-container {
@@ -40,31 +41,17 @@
       margin-left: 20px;
     }
 
+
     .bird-details {
       flex: 0 0 50%;
-      padding: 2rem; // Augmentation du padding
-      // background: rgba(255, 255, 255, 0.6) url('https://c1.wallpaperflare.com/preview/370/405/316/mist-misty-forest-woods.jpg') no-repeat center center;
-
+      padding: 2rem;
       background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('https://c1.wallpaperflare.com/preview/370/405/316/mist-misty-forest-woods.jpg');
-
-      // background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('https://us.123rf.com/450wm/olgaivolga/olgaivolga1512/olgaivolga151200189/50109831-dégradé-bleu-clair-et-blanc-sur-le-fond-blanc.jpg?ver=6');
-
       background-size: cover;
-      border-radius: 25px; // Coins arrondis pour correspondre à la photo
-
-      position: relative;
-
-      button[data-controller="heart"] {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        background: none; // Supprime le fond par défaut
-        border: none; // Supprime la bordure
-        font-size: 2em; // Définissez la taille du cœur
-      }
+      border-radius: 25px;
 
       .bird-propose {
         font-size: 0.9rem;
+        font-weight: bold;
 
         .birdlord-avatar {
           width: 30px;
@@ -76,66 +63,57 @@
       .bird-price {
         font-weight: bold;
         margin: 1rem 0;
+        font-size: 1.5em;
+      }
+
+      .bird-species,
+      .bird-description {
+        font-weight: normal;
+        margin: 1rem 0;
       }
 
       .bird-species {
         color: $bleue;
-        margin: 1rem 0;
       }
 
       .bird-description {
         margin: 1rem 0;
       }
+    }
 
-      .booking-section {
-        background-color: $grey;
-        padding: 2rem 1rem 3rem;
-        color: white;
+    .booking-section {
+      background-color: $grey;
+      padding: 2rem 1rem 3rem;
+      color: white;
 
-        .booking-dates {
-          display: flex;
-          justify-content: space-between;
-        }
+      .booking-dates {
+        display: flex;
+        justify-content: space-between;
+      }
 
-        .booking-price {
-          margin: 1rem 0;
-          margin-bottom: 2rem;
-        }
+      .booking-price {
+        margin: 1rem 0;
+        margin-bottom: 2rem;
+      }
 
-        button {
-          padding: 15px 30px;
-          font-size: 1.2em;
-          border: none;
-          border-radius: 8px;
-          background-color: $blue_fonce;
-          color: $white;
-          transition: all 0.3s;
-          font-family: $body-font;
+      button {
+        padding: 15px 30px;
+        font-size: 1.2em;
+        border: none;
+        border-radius: 8px;
+        background-color: $blue_fonce;
+        color: $white;
+        transition: all 0.3s;
+        font-family: $body-font;
 
-          &:hover {
-            background-color: darken($blue_fonce, 10%);
-            box-shadow: 0px 0px 10px 5px rgba(18, 43, 86, 0.15);
-          }
+        &:hover {
+          background-color: darken($bleue, 10%);
+          box-shadow: 0px 0px 10px 5px rgba(18, 43, 86, 0.15);
         }
       }
     }
   }
 }
-
-.empty-heart::before {
-  font-family: "Font Awesome 5 Free";
-  content: "\f004";
-  font-weight: 400; // Cœur vide
-  color: $gris_clair;
-}
-
-.full-heart::after {
-  font-family: "Font Awesome 5 Free";
-  content: "\f004";
-  font-weight: 900; // Cœur plein
-  color: $red;
-}
-
 
 input[type="date"] {
   padding: 10px 15px;
@@ -152,3 +130,186 @@ input[type="date"] {
     box-shadow: 0px 4px 6px rgba(50, 50, 93, 0.25), 0px 1px 3px rgba(0, 0, 0, 0.2);
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// .bird-show-container {
+//   font-family: $body-font;
+//   color: $body-color;
+//   background-color: $body-bg;
+//   border-radius: $border-radius;
+//   padding: 0 2rem;
+//   margin-top: 40px;
+//   margin-bottom: 40px;
+
+//   .bird-title {
+//     font-family: $headers-font;
+//     margin-bottom: 1rem;
+//     text-align: center;
+//   }
+
+//   .bird-info {
+//     display: flex;
+//     justify-content: space-between;
+//     gap: 3rem; // Espacement ajouté entre photo et détails
+//     padding-right: 100px;
+
+//     .bird-photo-container {
+//       flex: 0 0 50%;
+//       padding: 0 1rem;
+
+//       .bird-photo {
+//         max-width: 100%;
+//         height: auto;
+//         display: block;
+//         margin: 0 auto;
+//         object-fit: cover;
+//         border-radius: 25px;
+//       }
+//     }
+
+//     .birdlord-avatar {
+//       width: 50px;
+//       height: 50px;
+//       margin-bottom: 10px;
+//       margin-left: 20px;
+//     }
+
+//     .bird-details {
+//       flex: 0 0 50%;
+//       padding: 2rem; // Augmentation du padding
+//       // background: rgba(255, 255, 255, 0.6) url('https://c1.wallpaperflare.com/preview/370/405/316/mist-misty-forest-woods.jpg') no-repeat center center;
+
+//       background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('https://c1.wallpaperflare.com/preview/370/405/316/mist-misty-forest-woods.jpg');
+
+//       // background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('https://us.123rf.com/450wm/olgaivolga/olgaivolga1512/olgaivolga151200189/50109831-dégradé-bleu-clair-et-blanc-sur-le-fond-blanc.jpg?ver=6');
+
+//       background-size: cover;
+//       border-radius: 25px; // Coins arrondis pour correspondre à la photo
+
+//       position: relative;
+
+//       button[data-controller="heart"] {
+//         position: absolute;
+//         top: 10px;
+//         right: 10px;
+//         background: none; // Supprime le fond par défaut
+//         border: none; // Supprime la bordure
+//         font-size: 2em; // Définissez la taille du cœur
+//       }
+
+//       .bird-propose {
+//         font-size: 0.9rem;
+
+//         .birdlord-avatar {
+//           width: 30px;
+//           height: 30px;
+//           border-radius: 50%;
+//         }
+//       }
+
+//       .bird-price {
+//         font-weight: bold;
+//         margin: 1rem 0;
+//       }
+
+//       .bird-species {
+//         color: $bleue;
+//         margin: 1rem 0;
+//       }
+
+//       .bird-description {
+//         margin: 1rem 0;
+//       }
+
+//       .booking-section {
+//         background-color: $grey;
+//         padding: 2rem 1rem 3rem;
+//         color: white;
+
+//         .booking-dates {
+//           display: flex;
+//           justify-content: space-between;
+//         }
+
+//         .booking-price {
+//           margin: 1rem 0;
+//           margin-bottom: 2rem;
+//         }
+
+//         button {
+//           padding: 15px 30px;
+//           font-size: 1.2em;
+//           border: none;
+//           border-radius: 8px;
+//           background-color: $blue_fonce;
+//           color: $white;
+//           transition: all 0.3s;
+//           font-family: $body-font;
+
+//           &:hover {
+//             background-color: darken($blue_fonce, 10%);
+//             box-shadow: 0px 0px 10px 5px rgba(18, 43, 86, 0.15);
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+
+// .empty-heart::before {
+//   font-family: "Font Awesome 5 Free";
+//   content: "\f004";
+//   font-weight: 400; // Cœur vide
+//   color: $gris_clair;
+// }
+
+// .full-heart::after {
+//   font-family: "Font Awesome 5 Free";
+//   content: "\f004";
+//   font-weight: 900; // Cœur plein
+//   color: $red;
+// }
+
+
+// input[type="date"] {
+//   padding: 10px 15px;
+//   font-size: 1em;
+//   border: none;
+//   border-radius: 8px;
+//   box-shadow: 0px 4px 6px rgba(50, 50, 93, 0.11), 0px 1px 3px rgba(0, 0, 0, 0.08);
+//   background-color: $white;
+//   color: $black;
+//   appearance: none;
+
+//   &:focus {
+//     outline: none;
+//     box-shadow: 0px 4px 6px rgba(50, 50, 93, 0.25), 0px 1px 3px rgba(0, 0, 0, 0.2);
+//   }
+// }
